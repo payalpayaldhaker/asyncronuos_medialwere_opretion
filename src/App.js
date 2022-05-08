@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+
+import {  useDispatch, useSelector } from 'react-redux';
+import { myAsyncAction } from '.';
 import './App.css';
 
 function App() {
+
+      // state
+        let state =  useSelector((store)=>{ 
+            return store
+        });
+         let dispatch =useDispatch();
+      //function defination
+
+
+      //return statements
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <> 
+      {(state.name)}
+      <div>hello{console.log(state)}</div>
+      <button  onClick={()=>{dispatch(myAsyncAction())}}>button</button> 
+      </>
+
+  )
+
 }
 
 export default App;
